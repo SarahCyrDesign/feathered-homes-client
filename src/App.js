@@ -1,21 +1,62 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {connect} from 'react-redux';
+import logo from './logo.png';
+import 'semantic-ui-css/semantic.css'
 import './App.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import NavBar from './components/NavBar';
+import Routes from './components/Routes';
+import * as actions from './actions/birdActions';
 
-class App extends Component {
+export class App extends Component {
+
+  componentDidMount() {
+   if (this.props.birds.length === 0) {
+     console.log('component did mount')
+     this.props.actions.birdsFetch()
+     document.title = "Feathered Homes";
+    }
+   }
+
   render() {
+
+    if (this.props.hasErrored) {
+      return <p>Sorry, there was an error loading current birds</p>;
+    }
+    if (this.props.isLoading) {
+      return <p>Loading birds...</p>
+    }
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Router>
+        <div className="App">
+          <div className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h2>Feathered Homes</h2>
+          </div>
+        <div>
+          <div>
+            <NavBar />
+          </div>
+          <div>
+            <Routes />
+          </div>
+        </div>
+        </div>
+      </Router>
     );
   }
 }
 
-export default App;
+  function mapStateToProps(state) {
+    return {
+      birds: state.birds,
+      filter: null
+    }
+  }
+
+  function mapDispatchToProps(dispatch) {
+    return {actions: bindActionCreators(actions, dispatch)}
+  }
+
+export const FeatheredHomesApp = connect(mapStateToProps, mapDispatchToProps)(App)
