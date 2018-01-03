@@ -1,8 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import configureStore from './store/configureStore';
+import { FeatheredHomesApp } from './App';
+import { Provider } from 'react-redux';
+import 'semantic-ui-css/semantic.css'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+
+const store = configureStore();
+
+render(
+  <Provider store={store}>
+     <FeatheredHomesApp store={store}/>
+  </Provider>,
+  document.getElementById('root')
+);
