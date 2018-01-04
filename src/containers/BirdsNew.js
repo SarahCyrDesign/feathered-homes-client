@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Segment, Grid } from 'semantic-ui-react';
 import Dropzone from 'react-dropzone';
 import axios from 'axios';
-import { addBird } from '../actions/BirdActions';
+import { addBird } from '../actions/birdActions';
 
 const CLOUDINARY_UPLOAD_PRESET = 'lntx0yna';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/sarahcyrdesign/upload';
