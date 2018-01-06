@@ -5,6 +5,7 @@ import { Grid } from 'semantic-ui-react';
 const Sanctuaries = () => {
   return (
     <div>
+      <br></br>
       <Grid>
         <Grid.Column width={2}>
         </Grid.Column>

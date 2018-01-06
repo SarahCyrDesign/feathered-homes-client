@@ -89,12 +89,12 @@ class BirdsNew extends Component {
                 name="breed"
                 ref="breed"
                 onChange={this.handleOnChange} /></h3>
-            <h3>Description: <input
-                type="text"
-                placeholder="colors, age... "
+            <h3>Description:</h3>
+                <p><textarea rows="4" cols="35"
+                placeholder="colors, age, sex, included supplies... "
                 name="description"
                 ref="description"
-                onChange={this.handleOnChange} /></h3>
+                onChange={this.handleOnChange} /></p>
             <h3>Address:</h3>
             <p><textarea rows="4" cols="35"
                 name="address"
@@ -107,6 +107,7 @@ class BirdsNew extends Component {
                 name="contact_info"
                 ref="contact_info"
                 onChange={this.handleOnChange} /></h3>
+                <div className="dropzone">
               <Dropzone
                 name="photo"
                  onDrop={this.handleDrop}
@@ -114,6 +115,7 @@ class BirdsNew extends Component {
                  accept="image/*" >
                  <p>Drop a photo or click here to upload:</p>
                </Dropzone>
+               </div>
               <br></br>
               <br></br>
               <input

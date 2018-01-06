@@ -2,6 +2,27 @@
   text-align: center;
 }
 
+.menu {
+  background-color: #fad2be;
+}
+
+.hero-pic {
+  width: 100%;
+}
+
+.dropzone {
+  max-width: 200px;
+  text-align: center;
+  margin: auto;
+}
+
+.App-link {
+  text-align: center;
+  max-width: 100px;
+  margin: 10px;
+  padding: 10px;
+}
+
 h1 {
   color: #dd637a;
 }
@@ -16,6 +37,17 @@ a {
   font-size: 1em;
 }
 
+.description {
+  text-align: center;
+  word-wrap:break-word;
+  padding-left: 30px;
+  padding-right: 10px;
+}
+
+.bird-photo, .location {
+  border: 4px solid #4183C4;
+}
+
 .about-slogan {
   font-size: 2.2em;
   font-style: italic;
@@ -24,7 +56,6 @@ a {
 
 .App-logo {
     height: 130px;
-
     -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
        -moz-animation: fadein 3s; /* Firefox < 16 */
         -ms-animation: fadein 3s; /* Internet Explorer */
@@ -171,4 +202,8 @@ a {
   background-image: -o-linear-gradient(top, #ef6881, #dc4d68);
   background-image: linear-gradient(to bottom, #ef6881, #dc4d68);
   text-decoration: none;
+}
+
+.form sortable-handler {
+  touch-action: none;
 }

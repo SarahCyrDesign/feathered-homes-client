@@ -5,6 +5,7 @@ import Bird from '../components/Bird';
 
 const BirdsShow = ({ bird }) =>
   <div>
+    <br></br>
     <Bird key={bird.id} bird={bird}/>
     <h3 className="App-link"><Link to={`/birds`}> Back</Link></h3>
   </div>
