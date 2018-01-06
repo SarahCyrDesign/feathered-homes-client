@@ -31,9 +31,9 @@ class Bird extends Component {
           <Grid.Column width={1}>
           </Grid.Column>
           <Grid.Column width={4}>
-            <Link to={`/birds/${bird.id}`}><h2>Bird Adoptions List</h2></Link>
+            <Link to={`/birds/${bird.id}`}><h2>I need a home</h2></Link>
             <br></br>
-            <p><img src={bird.photo} width="300" height="200" alt='not found'/></p>
+            <p><img src={bird.photo} width="300" height="300" alt={'/images/adoptable_bird.png'} /></p>
           </Grid.Column>
           <Grid.Column width={5}>
             <h2>Bird Description:</h2>

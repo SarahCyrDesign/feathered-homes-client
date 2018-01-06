@@ -15,8 +15,9 @@ const About = () => {
           <p>Anonymously place your bird for adoption using this link to, <Link to={`/birds/new`} >place a bird for adoption</Link></p>
           <p>To adopt a new bird, please visit <Link to={`/birds`} >bird adoption list.</Link></p>
           <p>To find all the bird rescues and sanctuaries in your area, please visit <Link to={`/sanctuaries`} >bird sanctuaries and rescues list.</Link></p>
-          <br></br>
-          <br></br>
+          <div>
+              <img src={'/images/about-pic.jpg'} alt='Cockatoo' />
+          </div>
           <br></br>
           <br></br>
           <br></br>
