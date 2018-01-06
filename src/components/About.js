@@ -10,11 +10,11 @@ const About = () => {
         </Grid.Column>
         <Grid.Column width={12}>
           <h1>About Feathered Homes</h1>
-          <p><em>Every bird deserves a home</em></p>
-          <h3>Using Feathered Homes...</h3>
+          <h3>Using Feathered Homes:</h3>
           <p>Anonymously place your bird for adoption using this link to, <Link to={`/birds/new`} >place a bird for adoption</Link></p>
           <p>To adopt a new bird, please visit <Link to={`/birds`} >bird adoption list.</Link></p>
           <p>To find all the bird rescues and sanctuaries in your area, please visit <Link to={`/sanctuaries`} >bird sanctuaries and rescues list.</Link></p>
+          <p className="about-slogan">Every bird deserves a home</p>
           <div>
               <img src={'/images/about-pic.jpg'} alt='Cockatoo' />
           </div>

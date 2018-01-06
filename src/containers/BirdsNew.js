@@ -75,7 +75,7 @@ class BirdsNew extends Component {
           <Grid.Column width={4}>
           </Grid.Column>
           <Grid.Column width={8}>
-            <h2>Place a Bird for Adoption</h2>
+            <h1>Place a Bird for Adoption</h1>
             <form className="form sortable-handler" onSubmit={this.handleOnSubmit} >
             <h3>Name: <input
                 type="text"
@@ -118,11 +118,13 @@ class BirdsNew extends Component {
               <br></br>
               <input
                 type="submit"
-                className="btn btn-primary"
+                className="submit-btn"
                 value="Place Bird for adoption" />
+                <br></br>
+                <br></br>
               <button
                 onClick={this.handleCancel}
-                className="btn btn-danger">
+                className="cancel-btn">
                 Cancel
               </button>
             </form>

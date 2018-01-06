@@ -31,7 +31,7 @@ class Bird extends Component {
           <Grid.Column width={1}>
           </Grid.Column>
           <Grid.Column width={4}>
-            <Link to={`/birds/${bird.id}`}><h2>I need a home</h2></Link>
+            <Link to={`/birds/${bird.id}`}><h2 className="adoptable">I need a home</h2></Link>
             <br></br>
             <p><img src={bird.photo} width="300" height="300" alt={'/images/adoptable_bird.png'} /></p>
           </Grid.Column>
@@ -42,9 +42,10 @@ class Bird extends Component {
             <p>Description: {bird.description}</p>
             <p>Contact: {bird.contact_info}</p>
             <p><button
+              className="heart-btn"
               onClick={this.handleOnHeart}>
               Fill a Heart
-            </button>{bird.hearts}</p>
+            </button> {bird.hearts} hearts</p>
             </Grid.Column>
             <Grid.Column width={4}>
               <h2>Location:</h2>

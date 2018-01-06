@@ -25,7 +25,7 @@ class BirdsPage extends Component {
         <br></br>
           <header>
             <h1>Adoptable Birds</h1>
-            <em>Type the breed of the bird to filter:</em>
+            <em>Type the breed of the bird to filter: </em>
             <input type="text"
               value={this.state.search}
               placeholder=" breed "
