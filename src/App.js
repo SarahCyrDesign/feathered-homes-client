@@ -32,7 +32,6 @@ export class App extends Component {
         <div className="App">
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h2>Feathered Homes</h2>
           </div>
         <div>
           <div>
