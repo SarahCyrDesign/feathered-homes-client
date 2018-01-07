@@ -16,8 +16,9 @@ class BirdsPage extends Component {
   }
 
   render() {
+    let searchState = this.state.search
     let filteredBirds = this.props.birds.filter((bird) => {
-      return bird.breed.toLowerCase().indexOf(this.state.search) !== -1;
+      return bird.breed.toLowerCase().indexOf(searchState.toLowerCase()) !== -1;
       }
     );
     return (

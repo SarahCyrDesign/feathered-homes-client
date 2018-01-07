@@ -46,12 +46,12 @@ export function birdsFetch(url) {
   }
 }
 
-export function addBird(values) {
+export function addBird(bird) {
     return (dispatch) => {
       //dispatch({type: 'CREATE_NEW_BIRD'});
       return fetch(`/api/birds`, {
         method: 'POST',
-        body: JSON.stringify({birdt: values}),
+        body: JSON.stringify({bird}),
         headers: {
           'Content-Type': 'application/json'
         },
