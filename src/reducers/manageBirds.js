@@ -33,6 +33,7 @@ export function birds(state = [], action) {
         ...state,
         action.bird
       ];
+      //return state.concat(action.bird)
 
     case 'ADD_HEART':
       let index = state.findIndex(bird => bird.id === action.id);

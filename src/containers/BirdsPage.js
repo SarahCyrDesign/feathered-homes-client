@@ -7,34 +7,42 @@ class BirdsPage extends Component {
   constructor() {
     super();
     this.state = {
-      search: '',
+      search: ''
     };
   }
 
-  updateSearch(event) {
-    this.setState({search: event.target.value})
-  }
 
-  render() {
-    let searchState = this.state.search
-    let filteredBirds = this.props.birds.filter((bird) => {
-      return bird.breed.toLowerCase().indexOf(searchState.toLowerCase()) !== -1;
-      }
-    );
+
+
+        updateSearch(event) {
+          this.setState({search: event.target.value})
+        }
+
+        render() {
+          let searchState = this.state.search
+          let filteredBirds = this.props.birds.filter((bird) => {
+            return bird.breed.toLowerCase().indexOf(searchState.toLowerCase()) !== -1;
+          })
+    console.log(filteredBirds)
+
+    let sortedBirds = filteredBirds.sort((bird1, bird2) => (bird2.hearts - bird1.hearts));
+
+
+
     return (
       <div>
         <br></br>
-          <header>
-            <h1>Adoptable Birds</h1>
-            <em>Type the breed of the bird to filter: </em>
-            <input type="text"
-              value={this.state.search}
-              placeholder=" breed "
-              onChange={this.updateSearch.bind(this)}/>
-          </header>
-          <br></br>
+        <header>
+          <h1>Adoptable Birds</h1>
+          <em>Type the breed of the bird to filter: </em>
+          <input type="text"
+            value={this.state.search}
+            placeholder=" breed "
+            onChange={this.updateSearch.bind(this)}/>
+        </header>
+        <br></br>
         <ul>
-          {filteredBirds.reverse().map((bird)=> {
+          {sortedBirds.map((bird)=> {
             return <Segment key={bird.id} >
               <Bird bird={bird}/>
             </Segment>
