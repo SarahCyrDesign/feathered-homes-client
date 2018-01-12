@@ -11,21 +11,30 @@ class BirdsPage extends Component {
     };
   }
 
-
-
-
         updateSearch(event) {
           this.setState({search: event.target.value})
         }
 
+
+
         render() {
           let searchState = this.state.search
+
           let filteredBirds = this.props.birds.filter((bird) => {
             return bird.breed.toLowerCase().indexOf(searchState.toLowerCase()) !== -1;
           })
-    console.log(filteredBirds)
 
-    let sortedBirds = filteredBirds.sort((bird1, bird2) => (bird2.hearts - bird1.hearts));
+{/* Sort by Hearts and names event handlers */}
+          sortBirdsByHearts = (event) => {
+            let sortedBirdsHearts = filteredBirds.sort((bird1, bird2) => (bird2.hearts - bird1.hearts));
+            return sortedBirdsHearts.map(bird => bird.id);
+          }
+
+
+          sortBirdsByNames = (event) => {
+            let sortedBirdsNames = filteredBirds.sort((bird1, bird2) => (bird2.name - bird1.name));
+            return sortedBirdsNames.map(bird => bird.id);
+          }
 
 
 
@@ -41,13 +50,19 @@ class BirdsPage extends Component {
             onChange={this.updateSearch.bind(this)}/>
         </header>
         <br></br>
-        <ul>
-          {sortedBirds.map((bird)=> {
-            return <Segment key={bird.id} >
-              <Bird bird={bird}/>
-            </Segment>
-          })}
-        </ul>
+
+        {/* Filter by Hearts and names buttons */}
+        <p><button
+          className="heart-btn"
+          onClick={this.sortBirdsByHearts.bind(this)}>
+          Sort Birds by Hearts
+        </button></p>
+
+        <p><button
+          className="heart-btn"
+          onClick={this.sortBirdsByNames.bind(this)}>
+          Sort Birds by Name
+        </button></p>
 
     </div>
     );
