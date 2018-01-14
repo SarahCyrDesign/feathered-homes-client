@@ -34,11 +34,11 @@ class BirdsPage extends Component {
           })
 
           if (this.state.filterByHearts) {
-            filteredBirds.sort((bird1, bird2) {
+            filteredBirds.sort((bird1, bird2) => {
               return bird2.hearts - bird1.hearts;
             })
-            } else if (this.state.filterByNames) {
-              filteredBirds.sort((bird1, bird2) {
+          } else if (this.state.filterByNames) {
+              filteredBirds.sort((bird1, bird2) => {
                 return bird1.name < bird2.name ? -1 : 1
               })
             } else {
