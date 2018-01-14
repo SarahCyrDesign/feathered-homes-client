@@ -33,28 +33,17 @@ class BirdsPage extends Component {
             return bird.breed.toLowerCase().indexOf(searchState.toLowerCase()) !== -1;
           })
 
-
-
-
           if (this.state.filterByHearts) {
-
-          } else if (this.state.filterByNames) {
-
-          } else {
-            filteredBirds
+            filteredBirds.sort((bird1, bird2) {
+              return bird2.hearts - bird1.hearts;
+            })
+            } else if (this.state.filterByNames) {
+              filteredBirds.sort((bird1, bird2) {
+                return bird1.name < bird2.name ? -1 : 1
+              })
+            } else {
+              filteredBirds
           }
-
-          // let sortedBirdsHearts = this.state.filteredBirds.sort((bird1, bird2) =>        return (bird2.hearts - bird1.hearts)
-          // })
-
-
-            // let sortedBirdsNames = filteredBirds.sort((bird1, bird2) => (bird2.name - bird1.name)
-            //   return sortedBirdsNames.map((bird) => {
-            //     <Segment key={bird.id} >
-            //       <Bird bird={bird}/>
-            //     </Segment>
-            // }))
-
 
     return (
       <div>
